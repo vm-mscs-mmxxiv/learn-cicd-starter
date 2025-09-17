@@ -6,7 +6,22 @@ on:
 
 jobs:
   tests:
-    name: Tests First
+    name: Run GoFmt
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25.1"
+
+      - name: Check file formatting
+        run: test -z $(go fmt ./...)
+
+    name: Go Tests
     runs-on: ubuntu-latest
 
     steps:
