@@ -13,7 +13,7 @@ func TestGetAPIKey(t *testing.T) {
 	}{
 		{
 			header: http.Header{"Authorization": []string{"ApiKey key-xyz"}},
-			want:   "(this-here-to-fail)-key-xyz",
+			want:   "key-xyz",
 		},
 		{
 			header: http.Header{"Authorization": []string{"ApiKey aasdfsaf-adsaf-asdfsa"}},
