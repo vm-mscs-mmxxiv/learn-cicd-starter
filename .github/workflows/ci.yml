@@ -5,8 +5,8 @@ on:
     branches: [main]
 
 jobs:
-  tests:
-    name: Run GoFmt
+  style:
+    name: Style
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +21,7 @@ jobs:
       - name: Check file formatting
         run: test -z $(go fmt ./...)
 
+  tests:
     name: Go Tests
     runs-on: ubuntu-latest
 
